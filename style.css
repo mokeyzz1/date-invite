@@ -231,42 +231,33 @@ button:hover {
   transition: left 0.5s ease-in;
 }
 @media (max-width: 600px) {
-  #screen {
+  .tv-screen {
+    width: 90%;
+    height: auto;
     padding: 20px;
-    font-size: 16px;
-  }
-
-  #text {
-    font-size: 18px;
-    text-align: center;
-  }
-
-  #buttons {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 12px 20px;
-    width: 100%;
-    max-width: 300px;
+    box-sizing: border-box;
     margin: 0 auto;
   }
 
-  .heart {
-    width: 18px;
-    height: 18px;
+  h1 {
+    font-size: 12px;
+    margin-bottom: 20px;
+    line-height: 1.4;
   }
 
-  #cupid {
-    top: 30px;
-    left: 10px;
-    transform: scale(0.8);
+  .button-row {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  #arrow {
-    top: 60px;
-    transform: scale(0.8);
+  button {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .cloud {
+    width: 60px;
+    height: 30px;
   }
 }
