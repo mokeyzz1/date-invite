@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Date Night Invite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="pixel-bg">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="castle-wall"></div>
+    <div class="grass-strip"></div>
+  </div>
+
+  <!-- Cupid -->
+  <div id="cupid" class="cupid hidden">
+    <div class="wing wing-left"></div>
+    <div class="wing wing-right"></div>
+    <div class="body"></div>
+    <div class="bow"></div>
+    <div class="arrow" id="arrow"></div>
+  </div>
+
+  <!-- Loading -->
+  <div id="loading-screen">
+    <h1 class="loading-text">LOADING...</h1>
+  </div>
+
+  <!-- Main -->
+  <div class="tv-screen" id="screen" style="display: none;">
+    <h1 id="text">Ready for a little adventure?</h1>
+    <div class="buttons button-row" id="buttons">
+      <button onclick="handleYes()">YES</button>
+      <button onclick="handleNo()">NO</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+/* Base setup */
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Press Start 2P', monospace;
+  color: #fff;
+  background-color: #cce7ff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background layers */
+#pixel-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Castle wall */
+.castle-wall {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  height: 80px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ddd,
+    #ddd 20px,
+    #bbb 20px,
+    #bbb 40px
+  );
+  border-top: 4px solid #999;
+}
+
+/* Grass */
+.grass-strip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #57e35f;
+  border-top: 4px solid #3fb44a;
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: floatCloud 30s linear infinite;
+}
+
+.cloud1 { top: 60px; left: -100px; animation-delay: 0s; }
+.cloud2 { top: 100px; left: -150px; animation-delay: 5s; }
+.cloud3 { top: 160px; left: -200px; animation-delay: 10s; }
+
+@keyframes floatCloud {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(150vw); }
+}
+
+/* TV screen */
+.tv-screen {
+  width: 500px;
+  height: 300px;
+  background-color: #181133;
+  border: 4px solid #ff99e5;
+  box-shadow: 0 0 30px #ff99e588;
+  padding: 30px;
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: screenFlicker 1.5s infinite alternate;
+}
+
+@keyframes screenFlicker {
+  0% { opacity: 0.97; }
+  100% { opacity: 1; }
+}
+
+h1 {
+  font-size: 14px;
+  margin-bottom: 25px;
+  white-space: pre-line;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.button-row {
+  flex-direction: row;
+  gap: 25px;
+}
+
+button {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  background-color: #ff99e5;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px #ff99e588;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #ff99e5;
+  transform: scale(1.05);
+}
+
+/* Loading */
+#loading-screen {
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #ff99e5;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ❤️ Hearts */
+.heart {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: pink;
+  transform: rotate(45deg);
+  animation: floatUp 2s ease-out forwards;
+  opacity: 1;
+  z-index: 9;
+}
+.heart::before, .heart::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: pink;
+  border-radius: 50%;
+}
+.heart::before { top: -5px; left: 0; }
+.heart::after { top: 0; left: -5px; }
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(45deg); }
+  100% { transform: translateY(-150px) rotate(45deg); opacity: 0; }
+}
+
+/* 🏹 Cupid */
+.cupid {
+  position: absolute;
+  top: 100px;
+  left: -100px;
+  width: 40px;
+  height: 40px;
+  z-index: 9;
+  transition: left 3s linear;
+}
+
+.hidden {
+  display: none;
+}
+
+.wing {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.wing-left { top: -5px; left: -8px; }
+.wing-right { top: -5px; right: -8px; }
+
+.body {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.bow {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #a0522d;
+  border-left: none;
+  border-radius: 0 50% 50% 0;
+  top: 12px;
+  left: 20px;
+}
+
+.arrow {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: red;
+  top: 16px;
+  left: 24px;
+  transform: rotate(0deg);
+  transition: left 0.5s ease-in;
+}
